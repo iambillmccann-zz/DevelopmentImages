@@ -17,18 +17,21 @@ RUN sudo apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN sudo apt-get install nodejs
 
+# Step 3. Install Bash
+RUN sudo apt install bash
+
 # These are the ports we will expose
 EXPOSE 19000
 EXPOSE 19001
 EXPOSE 19002
 
-# Step 3. Set environment variables
+# Step 4. Set environment variables
 #used by react native builder to set the ip address, other wise 
 #will use the ip address of the docker container.
 ENV REACT_NATIVE_PACKAGER_HOSTNAME="10.0.0.2"
 ENV NPM_CONFIG_PREFIX="/home/$USERNAME/.npm-global"
 
-# Step 4. Copy over the bash scripts
+# Step 5. Copy over the bash scripts
 #         entrypoint.sh: Start the container
 #         get-source.sh: Pull the source code
 COPY *.sh /

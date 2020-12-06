@@ -17,7 +17,7 @@ services:
       - "19000:19000"
       - "19001:19001"
       - "19002:19002"
-#   volumes:
-#     - myexpo:/home/dev/src
+    volumes:
+      - myexpo:/home/dev/src
 volumes:
   myexpo:
