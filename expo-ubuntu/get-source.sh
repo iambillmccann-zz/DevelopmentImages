@@ -35,9 +35,10 @@ else
     echo  "starting fresh"
     expo init $gitDir --non-interactive --template blank
     cd $gitDir
-    npm install react-native-paper
-    npm install --save react-native-vector-icons
 fi
 
 echo "installing packages"
+npm install react-native-paper
+npm install --save react-native-vector-icons
 npm install
+echo "Ready to start coding"
