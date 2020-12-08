@@ -30,11 +30,14 @@ then
     echo "cloninng git repo $gitRepo"
     git clone "https://$pat@$gitRepo"
     echo "git repo cloned successfully"
+    cd $gitDir
 else
     echo  "starting fresh"
     expo init $gitDir --non-interactive --template blank
+    cd $gitDir
+    npm install react-native-paper
+    npm install --save react-native-vector-icons
 fi
 
-cd $gitDir
 echo "installing packages"
 npm install
