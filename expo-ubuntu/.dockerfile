@@ -7,15 +7,24 @@ RUN adduser --system --home /home/dev --shell /bin/bash --uid 1005  ${USERNAME}
 RUN usermod -aG sudo dev
 
 # Step 2. Install software
-RUN apt update && apt install -y \
-    git \
+RUN apt-get update
+RUN apt-get install -y \
     procps \
     sudo
+
 RUN sudo apt-get install apt-utils
+RUN apt-get install build-essential unzip -y
+
+RUN apt-get install -y git
+RUN git config --global user.name "iambillmccann"
+RUN git config --global user.email bill.mccann@gmail.com
+
+# RUN apt-get install git=2.17.0 -V
 
 RUN sudo apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN sudo apt-get install nodejs
+RUN npm install -g npm
 
 # Step 3. Install Bash
 RUN sudo apt install bash

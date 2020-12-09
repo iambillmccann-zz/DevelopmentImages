@@ -28,7 +28,7 @@ fi
 if [ "$pat" != "NOTSET" ]
 then
     echo "cloninng git repo $gitRepo"
-    git clone --branch main "https://$pat@$gitRepo"
+    git clone --branch master "https://$pat@$gitRepo"
     echo "git repo cloned successfully"
     cd $gitDir
 else
