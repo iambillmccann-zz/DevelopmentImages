@@ -8,7 +8,7 @@ services:
     image: amara:latest
     extra_hosts:
       - "devserver:10.0.0.2"
-#   command: "--folder beagle"
+#    command: "--folder beagle"
     command: "--gitRepo github.com/iambillmccann/beagle.git --pat ee77ecd052ec3db408c3634367b62410e3667d26 --folder beagle"
     expose:
       - "19000"
@@ -18,7 +18,7 @@ services:
       - "19000:19000"
       - "19001:19001"
       - "19002:19002"
-    volumes:
-      - myexpo:/home/dev/src
-volumes:
-  myexpo:
+#    volumes:
+#      - myexpo:/home/dev/src
+#volumes:
+#  myexpo:
